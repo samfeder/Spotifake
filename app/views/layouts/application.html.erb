@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Spotifake</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+
+</head>
+<body>
+
+<% if flash[:errors] %>
+  <ul>
+  <% flash[:errors].each do |error| %>
+    <li><%= error %></li>
+  <% end %>
+  </ul>
+<% end %>
+
+<% if signed_in? %>
+  <%= current_user.email %>
+  <%= button_to "Logout", session_url, method: "delete" %>
+<% end %>
+
+<%= yield %>
+
+<% if !signed_in? %>
+<%= link_to "Sign in", new_session_url %>
+<%= link_to "Sign up", new_user_url %>
+<% end %>
+
+</body>
+</html>

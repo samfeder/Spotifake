@@ -1,0 +1,10 @@
+<h1>Bands | Spotifake</h1>
+
+<h2><%= @band.name %></h2>
+<% @band.albums.each do |album| %>
+  <%=link_to album.name, band_album_url(album) %><br>
+<% end %>
+<br><br>
+<%#=link_to "Add Album", new_band_album_url %>
+<br><br><br><br>
+<%=link_to "Bands", bands_url %>
