@@ -1,3 +1,14 @@
-  <% album.tracks.each do |track| %>
-    <%=link_to track.title, band_album_track(track) %>
-  <% end %>
+<h1> <%= @track.title %> | Spotifake</h1>
+
+<p><%= @track.lyrics %>
+
+<br>
+<br>
+<br>
+<a href ="<%= edit_track_url(@track) %>">Edit <%= @track.title %></a>
+<br>
+<br>
+<%= link_to "Back to #{@track.album.name}", album_url(@track.album) %>
+<br>
+<br>
+<%= button_to "Delete Track", track_url(@track), method: :delete%>

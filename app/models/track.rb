@@ -4,7 +4,7 @@ class Track < ActiveRecord::Base
 
   belongs_to :album
 
-  has_one(:artist, through: :album, source: :artist)
+  has_one(:band, through: :album, source: :band)
 
   after_initialize :assign_default_bonus_status
 

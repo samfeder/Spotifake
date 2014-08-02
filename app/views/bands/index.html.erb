@@ -1,7 +1,7 @@
 <h1>Bands | Spotifake</h1>
 
 <% @bands.each do |band| %>
-  <h2><%=link_to band.name, band_albums_url(band) %></h2>
+  <h2><%=link_to band.name, band_url(band) %></h2>
 <% end %>
 
 <%= button_to "Add band", new_band_url, method: :get%>

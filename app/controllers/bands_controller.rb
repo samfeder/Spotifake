@@ -34,7 +34,9 @@ class BandsController < ApplicationController
   end
 
   def destroy
-
+    @bands = Band.all
+    Band.find(params[:id]).destroy!
+    render :index
   end
 
   private

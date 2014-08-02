@@ -1,9 +1,8 @@
-<h1> Add a new track to <%= @track.album.name %> | Spotifake</h1>
-<form action="<%= album_tracks_url %>" method="post">
-  <input
-  name="_method"
-  type="hidden"
-  value="post">
+<h1> Edit <%= @track.title %> | Spotifake</h1>
+<%= fail %>
+<form action="<%= track_url %>" method="POST">
+
+  <input type="hidden" name="_method" value="PATCH">
   <input
     type="hidden"
     name="authenticity_token"
@@ -14,8 +13,10 @@
   <input type="text"
            name="track[title]"
            id="title"
+           value="<%= @track.title %>"
            >
 </label>
+<!--Set the edit defaults -->
 <label for="bonus_status"><br><br>
   Regular track
   <input type="radio"
@@ -35,7 +36,9 @@
   Lyrics
   <textarea
    name="track[lyrics]"
-   id="lyrics"></textarea><br><br>
+   value="<%= @track.title %>"
+   id="lyrics">
+</textarea><br><br>
 </label>
 <input type="submit">
 </form>

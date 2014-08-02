@@ -1,6 +1,6 @@
 <h1> Add a new <%= @album.band %> album | Spotifake</h1>
 
-<form action="<%= bands_url %>" method="post">
+<form action="<%= band_albums_url %>" method="post">
   <input
   name="_method"
   type="hidden"
@@ -9,6 +9,10 @@
     type="hidden"
     name="authenticity_token"
     value="<%= form_authenticity_token %>">
+  <input
+  name="album[band_id]"
+  type="hidden"
+  value="<%= @album.band_id %>">
 
 <label for="album_name">
   Album Name
